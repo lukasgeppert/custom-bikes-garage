@@ -13,6 +13,13 @@ use Illuminate\Http\Request;
 |
 */
 
+Route::apiResources([
+    'bikes' => 'API/BikeController',
+    'builders' => 'API/BuilderController',
+    'items' => 'API/ItemsController',
+    'bikes/{bike}/ratings' => 'API/RatingController'
+]);
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
