@@ -55,4 +55,28 @@ class Bike extends Model
         'mods',
         'picture'
     ];
+    /**
+     * Relationship
+     * 
+     * @var string
+     */
+    public function builder() {
+        return $this->belongsTo('App\Builder');
+    }
+
+    public function items() {
+        return $this->hasMany('App\Item');
+    }
+
+    public function garages() {
+        return $this->belongsToMany('App\Garage');
+    }
+
+    public function user() {
+        return $this->belongsTo('User::class');
+    }
+
+    public function ratings() {
+        return $this->hasMany('Rating::class');
+    }
 }
