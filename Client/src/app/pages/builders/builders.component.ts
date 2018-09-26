@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core'
 
 @Component({
   selector: 'app-builders',
   templateUrl: './builders.component.html',
-  styleUrls: ['./builders.component.scss']
+  styleUrls: ['./builders.component.scss'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class BuildersComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
