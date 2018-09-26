@@ -1,3 +1,36 @@
-<p>
-  nav works!
-</p>
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a [routerLink]="['/']" class="navbar-brand" (click)="setTitle('Custom Bikes Garage')">
+      Custom Bikes Garage
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" 
+    data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+     aria-labelledby="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a [routerLink]="['/bikes']" class="nav-link" routerLinkActive="active"
+           (click)="setTitle('Bikes')">Bikes</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/builders']" class="nav-link" routerLinkActive="active"
+          (click)="setTitle('Builders')">Builders</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/login']" class="nav-link" routerLinkActive="active"
+          (click)="setTitle('Login')">Login</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/register']" class="nav-link" routerLinkActive="active"
+          (click)="setTitle('Register')">Register</a>
+        </li>
+        <li class="nav-item">
+          <a [routerLink]="['/logout']" class="nav-link" routerLinkActive="active"
+          (click)="setTitle('Logout')">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
