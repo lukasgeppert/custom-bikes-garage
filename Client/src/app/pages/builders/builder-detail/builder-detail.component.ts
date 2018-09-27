@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Builder } from '../builder';
+import { BuilderService } from '../_services/builder.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-builder-detail',
@@ -7,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BuilderDetailComponent implements OnInit {
 
-  constructor() { }
+  builder: Builder;
+  isLoading: Boolean = false;
+
+  constructor(private buildersService: BuilderService,
+  private route: ActivatedRoute) { }
 
   ngOnInit() {
   }

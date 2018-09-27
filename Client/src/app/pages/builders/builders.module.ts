@@ -5,11 +5,15 @@ import { BuildersRoutingModule } from './builders-routing.module';
 import { BuildersComponent } from './builders.component';
 import { BuilderDetailComponent } from './builder-detail/builder-detail.component';
 import { BuilderListComponent } from './builder-list/builder-list.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     CommonModule,
-    BuildersRoutingModule
+    BuildersRoutingModule,
+    FormsModule,
+    NgbModule
   ],
   declarations: [BuildersComponent, BuilderDetailComponent, BuilderListComponent]
 })

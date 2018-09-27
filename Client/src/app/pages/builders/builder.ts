@@ -1,11 +1,11 @@
-import { Bike } from "../bikes/bike";
+import { Bike } from '../bikes/bike'
 
 export class Builder {
-  id: number;
-  name: string;
-  description: string;
-  location: string;
-  bike?: Bike;
+  id: number
+  name: string
+  description: string
+  location: string
+  bike?: Bike
 
   constructor() {}
 }
