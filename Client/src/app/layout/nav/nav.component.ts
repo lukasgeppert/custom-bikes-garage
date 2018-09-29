@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { Title } from '@angular/platform-browser'
+import { Router } from '@angular/router';
 import { AuthService } from '../../pages/auth/_services/auth.service'
 
 @Component({
@@ -8,7 +9,7 @@ import { AuthService } from '../../pages/auth/_services/auth.service'
   styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent implements OnInit {
-  public constructor(private titleTagService: Title, public auth: AuthService) {}
+  public constructor(private titleTagService: Title, public auth: AuthService, private router: Router) {}
   /**
    * setTitle
    *
@@ -19,5 +20,13 @@ export class NavComponent implements OnInit {
     this.titleTagService.setTitle(`${pageTitle} | CustomBikesGarage`)
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    if (this.auth.getToken()) {
+      this.auth.getUser().subscribe();
+    }
+  }
+
+  onLogout() {
+    this.auth.onLogout().subscribe();
+  }
 }

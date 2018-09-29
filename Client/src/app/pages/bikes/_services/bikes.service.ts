@@ -44,7 +44,7 @@ export class BikesService {
   }
 
   /** PUT bike to bikes endpoint */
-  updateBike(bike: Bike, id: number): Observable<Bike> {
+  updateBike(id: number, bike: Bike): Observable<Bike> {
     return this.http
       .put<Bike>(this.bikesUrl + `/${id}`, bike)
       .pipe(catchError(this.handleError('updateBike', bike)))

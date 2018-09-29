@@ -17,6 +17,18 @@ export class BuilderDetailComponent implements OnInit {
   private route: ActivatedRoute) { }
 
   ngOnInit() {
+    // Get builder detail
+    this.getBuilderDetail();
+  }
+
+  getBuilderDetail(): void {
+    this.isLoading = true
+    const id = +this.route.snapshot.paramMap.get('id')
+    this.buildersService.getBuilderDetail(id)
+      .subscribe(builder => {
+        this.isLoading = false
+        this.builder = builder['data']
+    })
   }
 
 }
